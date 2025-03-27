@@ -97,7 +97,7 @@ struct SettingsView: View {
                         
                         // Условия использования
                         Button {
-                            openURL("https://www.google.com")
+                            openURL("https://www.privacypolicies.com/live/78002cc1-a160-4b79-8bee-387ef46069a4")
                         } label: {
                             HStack {
                                 HStack {
@@ -113,7 +113,7 @@ struct SettingsView: View {
                                             .frame(width: 14, height: 14)
                                     }
                                     
-                                    Text("Terms of Use")
+                                    Text("Privacy Policy")
                                         .font(.custom("DaysOne-Regular", size: 16))
                                         .foregroundColor(.white)
                                 }
@@ -129,39 +129,7 @@ struct SettingsView: View {
                             .cornerRadius(12)
                         }
                         
-                        // Помощь и поддержка
-                        Button {
-                            openURL("https://www.google.com")
-                        } label: {
-                            HStack {
-                                HStack {
-                                    ZStack {
-                                        Circle()
-                                            .fill(Color(hex: "#17182D"))
-                                            .frame(width: 30, height: 30)
-                                        
-                                        Image("help")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .foregroundColor(.white)
-                                            .frame(width: 14, height: 14)
-                                    }
-                                    
-                                    Text("Help & Support")
-                                        .font(.custom("DaysOne-Regular", size: 16))
-                                        .foregroundColor(.white)
-                                }
-                                
-                                Spacer()
-                                
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 14))
-                            }
-                            .padding(16)
-                            .background(Color(hex: "#2A2E46"))
-                            .cornerRadius(12)
-                        }
+
                     }
                 }
                 .padding(.horizontal, 20)
