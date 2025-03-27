@@ -6,26 +6,32 @@ struct OnboardingView: View {
     @Binding var onboardingCompleted: Bool
     
     var body: some View {
-        TabView(selection: $currentPage) {
-            ForEach(OnboardingModel.data) { item in
-                OnboardingPageView(model: item, 
-                                 onNext: {
-                    if item.id == OnboardingModel.data.count - 1 {
-                        completeOnboarding()
-                    } else {
-                        withAnimation {
-                            currentPage += 1
+        ZStack {
+            TabView(selection: $currentPage) {
+                ForEach(OnboardingModel.data) { item in
+                    OnboardingPageView(model: item,
+                                       onNext: {
+                        if item.id == OnboardingModel.data.count - 1 {
+                            completeOnboarding()
+                        } else {
+                            withAnimation {
+                                currentPage += 1
+                            }
                         }
-                    }
-                },
-                                 onSkip: {
-                    completeOnboarding()
-                })
-                .tag(item.id)
+                    },
+                                       onSkip: {
+                        completeOnboarding()
+                    })
+                    .tag(item.id)
+                }
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
         .background(Color(hex: "#17182D"))
+        .iukisonubas()
+        .onAppear() {
+            print("ghes")
+        }
     }
     
     // Функция для завершения онбординга
